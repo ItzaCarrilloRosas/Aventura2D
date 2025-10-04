@@ -48,6 +48,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Scripts\Shoot.cs" />
+    <Compile Include="Assets\Scripts\SavePosition.cs" />
     <Compile Include="Assets\Scripts\Movement.cs" />
   </ItemGroup>
   <ItemGroup>
