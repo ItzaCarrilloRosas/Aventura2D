@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class Shoot : MonoBehaviour
 {
@@ -8,9 +9,15 @@ public class Shoot : MonoBehaviour
 
     void Update()
     {
-        if (UnityEngine.InputSystem.Keyboard.current.spaceKey.wasPressedThisFrame)
+        var keyboard = Keyboard.current;
+
+        if (keyboard != null)
         {
-            ShootBullet();
+            // Disparar con J
+            if (keyboard.jKey.wasPressedThisFrame)
+            {
+                ShootBullet();
+            }
         }
     }
 
@@ -21,4 +28,3 @@ public class Shoot : MonoBehaviour
         bullet.GetComponent<Rigidbody2D>().velocity = new Vector2(direction * bulletSpeed, 0f);
     }
 }
-
